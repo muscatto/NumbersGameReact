@@ -13,21 +13,20 @@ const Board = (props) => {
   }, []);
 
   useEffect(() => {
-    if (props.currentNum === 1) {
-      const nums = [];
-      const panelsInit = [];
-      for (let i = 1; i <= 25; i++) {
-        nums.push(i);
-      }
-      for (let i = 0; i < 25; i++) {
-        const num = nums.splice(Math.floor(Math.random() * nums.length), 1)[0];
-        panelsInit.push({ number: num, press: false });
-      }
-      if (props.currentNum === 1) {
-        setPanels(panelsInit);
-      }
+    if (props.currentNum !== 1) {
+      return;
     }
-  }, [props.currentNum]);
+    const nums = [];
+    const panelsInit = [];
+    for (let i = 1; i <= 25; i++) {
+      nums.push(i);
+    }
+    for (let i = 0; i < 25; i++) {
+      const num = nums.splice(Math.floor(Math.random() * nums.length), 1)[0];
+      panelsInit.push({ number: num, press: false });
+    }
+    setPanels(panelsInit);
+  }, [props.currentNum, props.playCount]);
 
   const handlePanelPress = (number) => {
     if (props.currentNum !== number) {
@@ -54,7 +53,7 @@ const Board = (props) => {
     );
   });
 
-  return (<ul id="board">{panelItems}</ul>);
+  return <ul id="board">{panelItems}</ul>;
 };
 
 export default Board;

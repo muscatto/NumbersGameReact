@@ -14,6 +14,7 @@ function App() {
   const [timerText, setTimerText] = useState(0);
   const [currentNum, setCurrentNum] = useState();
   const [displayModal, setDisplayModal] = useState(false);
+  const [rePlaying, setRePlaying] = useState(0);
 
   const handleStartClick = () => {
     if (typeof timeoutId !== "undefined") {
@@ -22,6 +23,7 @@ function App() {
     setCurrentNum(1);
     startTime = Date.now();
     runTimer();
+    setRePlaying(rePlaying + 1);
   };
 
   const runTimer = () => {
@@ -74,8 +76,8 @@ function App() {
         </>
       )}
       <div id="container">
-        <div id="timer">{timerText}</div>
-        <Board addCurrentNum={addCurrentNum} currentNum={currentNum} />
+        <div id="timer"><span className="game-title">NumbersGame</span>{timerText}</div>
+        <Board addCurrentNum={addCurrentNum} currentNum={currentNum} playCount={rePlaying} />
         <div id="btn" onClick={handleStartClick}>
           START
         </div>

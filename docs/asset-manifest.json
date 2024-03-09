@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/NumbersGameReact/static/css/main.d36e53ee.css",
-    "main.js": "/NumbersGameReact/static/js/main.7f673d22.js",
+    "main.css": "/NumbersGameReact/static/css/main.0b9e0074.css",
+    "main.js": "/NumbersGameReact/static/js/main.b46d877d.js",
     "static/js/453.7aba8744.chunk.js": "/NumbersGameReact/static/js/453.7aba8744.chunk.js",
     "index.html": "/NumbersGameReact/index.html",
-    "main.d36e53ee.css.map": "/NumbersGameReact/static/css/main.d36e53ee.css.map",
-    "main.7f673d22.js.map": "/NumbersGameReact/static/js/main.7f673d22.js.map",
+    "main.0b9e0074.css.map": "/NumbersGameReact/static/css/main.0b9e0074.css.map",
+    "main.b46d877d.js.map": "/NumbersGameReact/static/js/main.b46d877d.js.map",
     "453.7aba8744.chunk.js.map": "/NumbersGameReact/static/js/453.7aba8744.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d36e53ee.css",
-    "static/js/main.7f673d22.js"
+    "static/css/main.0b9e0074.css",
+    "static/js/main.b46d877d.js"
   ]
 }
