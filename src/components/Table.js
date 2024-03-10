@@ -21,7 +21,6 @@ const Table = (props) => {
 
   useEffect(() => {
     readData();
-    console.log("Download Success");
   }, [props.modalStatus]);
 
   const tableItems = results.map((result, index) => {

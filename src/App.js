@@ -23,7 +23,7 @@ function App() {
     setCurrentNum(1);
     startTime = Date.now();
     runTimer();
-    setRePlaying(rePlaying + 1);
+    setRePlaying((prevState) => { return prevState + 1; });
   };
 
   const runTimer = () => {
@@ -34,7 +34,7 @@ function App() {
   };
 
   const addCurrentNum = () => {
-    setCurrentNum(currentNum + 1);
+    setCurrentNum((prevState) => { return prevState + 1; });
     Check();
   };
 
@@ -45,18 +45,17 @@ function App() {
         time: time,
         createdAt: serverTimestamp(),
       });
-      console.log("Document written with ID: ", docRef.id);
     } catch (e) {
-      console.error("Error adding document: ", e);
+      alert("Error adding document: ", e);
     }
   }
 
   const Check = () => {
     if (currentNum === 25) {
       clearTimeout(timeoutId);
-      setDisplayModal(true);
+      setDisplayModal((prevState) => { return !prevState });
       const submitName = prompt("名前を入力してください");
-      if (typeof submitName !== "string") {
+      if (typeof submitName !== "string" || submitName === '') {
         return;
       }
       addData(submitName, Number(timerText));
@@ -64,7 +63,7 @@ function App() {
   };
 
   const handleModalCloseClick = () => {
-    setDisplayModal(false);
+    setDisplayModal((prevState) => { return !prevState });
   };
 
   return (
